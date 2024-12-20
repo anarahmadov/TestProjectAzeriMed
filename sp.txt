@@ -1,0 +1,41 @@
+CREATE PROCEDURE CalculateQuadraticRoots
+    @a FLOAT,
+    @b FLOAT,
+    @c FLOAT,
+    @Root1 FLOAT OUTPUT,
+    @Root2 FLOAT OUTPUT,
+    @ErrorMessage NVARCHAR(255) OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SET @ErrorMessage = NULL;
+    
+    IF @a = 0
+    BEGIN
+        SET @ErrorMessage = 'Coefficient a cannot be zero.';
+        RETURN;
+    END
+    
+    DECLARE @Discriminant FLOAT;
+    SET @Discriminant = @b * @b - 4 * @a * @c;
+
+    IF @Discriminant > 0
+    BEGIN
+        SET @Root1 = (-@b + SQRT(@Discriminant)) / (2 * @a);
+        SET @Root2 = (-@b - SQRT(@Discriminant)) / (2 * @a);
+    END
+    
+    ELSE IF @Discriminant = 0
+    BEGIN
+        SET @Root1 = -@b / (2 * @a);
+        SET @Root2 = @Root1; 
+    END
+    
+    ELSE
+    BEGIN
+        SET @ErrorMessage = 'no real roots';
+        SET @Root1 = NULL;
+        SET @Root2 = NULL;
+    END
+END
