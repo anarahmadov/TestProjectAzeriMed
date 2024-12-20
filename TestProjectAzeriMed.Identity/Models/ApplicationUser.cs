@@ -12,6 +12,6 @@ namespace TestProjectAzeriMed.Identity.Models
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string PasswordHash { get; set; }
-        public string Token { get; set; }
+        public string? Token { get; set; }
     }
 }

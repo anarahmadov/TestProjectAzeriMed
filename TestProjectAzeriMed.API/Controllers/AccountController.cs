@@ -19,15 +19,15 @@ namespace TestProjectAzeriMed.API.Controllers
         {
             var response = await _authService.Login(authRequest);
 
-            return View(response);
+            return Ok(response);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register([FromBody]RegistrationRequest registrationRequest)
+        public async Task<IActionResult> Register([FromBody] RegistrationRequest registrationRequest)
         {
             var response = await _authService.Register(registrationRequest);
 
-            return View(response);
+            return Ok(response);
         }
     }
 }

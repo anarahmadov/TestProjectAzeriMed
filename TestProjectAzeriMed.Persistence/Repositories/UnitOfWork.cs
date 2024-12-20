@@ -1,8 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using SpendLess.Persistence;
-using System;
-using System.Security.Claims;
-using System.Threading.Tasks;
 using TestProjectAzeriMed.Application.Constants;
 using TestProjectAzeriMed.Application.Contracts.Persistence;
 
@@ -31,7 +27,7 @@ namespace TestProjectAzeriMed.Persistence.Repositories
         {
             var username = _httpContextAccessor.HttpContext.User.FindFirst(CustomClaimTypes.Uid)?.Value;
 
-            await _context.SaveChangesAsync(username);
+            await _context.SaveChangesAsync();
         }
     }
 }

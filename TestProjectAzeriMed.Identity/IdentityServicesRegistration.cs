@@ -17,17 +17,8 @@ namespace TestProjectAzeriMed.Identity
         public static IServiceCollection ConfigureIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<TestProjectIdentityDbContext>(options =>
-            {
-                options.UseSqlServer(configuration.GetConnectionString("TestProjectIdentityConnectionString"),
-                    sqlOptions =>
-                    {
-                        sqlOptions.EnableRetryOnFailure(
-                            maxRetryCount: 5,                           // Max retry attempts
-                            maxRetryDelay: TimeSpan.FromSeconds(10),    // Delay between retries
-                            errorNumbersToAdd: new List<int> { 10060 }  // Example of adding specific error codes
-                        );
-                    });
-            });
+    options.UseSqlServer(configuration.GetConnectionString("TestProjectIdentityConnectionString"),
+    b => b.MigrationsAssembly(typeof(TestProjectIdentityDbContext).Assembly.FullName)));
             services.AddTransient<IPasswordHasher<ApplicationUser>, PasswordHasher<ApplicationUser>>();
             services.AddTransient<IPasswordHelper, PasswordHelper>();
             services.AddTransient<IAuthService, AuthService>();
