@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TestProjectAzeriMed.Application.Contracts.Identity;
 
 namespace TestProjectAzeriMed.API.Controllers
 {
@@ -7,11 +8,18 @@ namespace TestProjectAzeriMed.API.Controllers
     [Route("api/[controller]")]
     public class UserController : Controller
     {
-        public IActionResult GetUser(int userId)
+        private readonly IUserService _userService;
+        public UserController(IUserService userService)
         {
+            _userService = userService;
+        }
 
+        [HttpGet]
+        public async Task<IActionResult> GetUser([FromQuery]int userId)
+        {
+            var user = await _userService.GetUser(userId);
 
-            return View();
+            return Ok(user);
         }
     }
 }

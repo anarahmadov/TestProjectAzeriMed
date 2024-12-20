@@ -27,7 +27,7 @@ namespace TestProjectAzeriMed.Identity.Services
             _tokenService = tokenService;
         }
 
-        public async Task<AuthResponse> Login(AuthRequest request)
+        public async Task<AuthResponse> Login(AuthRequest request, bool isTokenExpired = false)
         {
             var user = await _dbSet.FirstOrDefaultAsync(x => x.Name == request.Name);
 
@@ -41,6 +41,21 @@ namespace TestProjectAzeriMed.Identity.Services
             if (!result)
             {
                 throw new Exception($"Credentials for '{request.Name} aren't valid'.");
+            }
+            
+            if (isTokenExpired)
+            {
+                var tokenString = GenerateToken(user.ID, user.Name, expiryMinutes: 60);
+
+                try
+                {
+                    user.Token = tokenString;
+                    await _dbContext.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
             }
 
             AuthResponse response = new AuthResponse
@@ -69,7 +84,7 @@ namespace TestProjectAzeriMed.Identity.Services
                 PasswordHash = password_hash
             };
 
-            var tokenString = _tokenService.GenerateToken(user.ID, user.Name, expiryMinutes: 60);
+            var tokenString = GenerateToken(user.ID, user.Name, expiryMinutes: 60);
 
             try
             {
@@ -86,6 +101,11 @@ namespace TestProjectAzeriMed.Identity.Services
             }
 
             return new RegistrationResponse() {Token = tokenString };
+        }
+
+        private string GenerateToken(int userId, string userName, int expiryMinutes)
+        {
+            return _tokenService.GenerateToken(userId, userName, expiryMinutes);
         }
     }
 }

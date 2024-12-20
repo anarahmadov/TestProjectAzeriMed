@@ -15,8 +15,8 @@ namespace TestProjectAzeriMed.Identity
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(TestProjectIdentityDbContext).Assembly);
         }
 
-        DbSet<ApplicationUser> Users { get; set; }
-        DbSet<Token> Tokens { get; set; }
+        public DbSet<ApplicationUser> Users { get; set; }
+        public DbSet<Token> Tokens { get; set; }
         
     }
 }

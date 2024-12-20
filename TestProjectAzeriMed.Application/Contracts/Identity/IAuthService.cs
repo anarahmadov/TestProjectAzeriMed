@@ -8,7 +8,7 @@ namespace TestProjectAzeriMed.Application.Contracts.Identity
 {
     public interface IAuthService
     {
-        Task<AuthResponse> Login(AuthRequest request);
+        Task<AuthResponse> Login(AuthRequest request, bool isTokenExpired = false);
         Task<RegistrationResponse> Register(RegistrationRequest request);
 
     }

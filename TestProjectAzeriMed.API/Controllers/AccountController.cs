@@ -15,9 +15,9 @@ namespace TestProjectAzeriMed.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Login(AuthRequest authRequest)
+        public async Task<IActionResult> Login(AuthRequest authRequest, bool isTokenExpired = false)
         {
-            var response = await _authService.Login(authRequest);
+            var response = await _authService.Login(authRequest, isTokenExpired);
 
             return Ok(response);
         }
