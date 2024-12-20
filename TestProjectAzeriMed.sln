@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1B21A466-1917-4689-8281-71BB35D5694F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{12EBDBBE-B300-4C39-BAD5-988244B681E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D36744C5-4337-4115-8B41-F87E21CB598C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{F37C516B-BC2D-481F-9BDD-EB45815D007E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{67C6B183-9F69-4E21-9A23-98F5291B3114}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectAzeriMed.API", "TestProjectAzeriMed.API\TestProjectAzeriMed.API.csproj", "{1B069B4C-606B-45DB-A941-65E0AE397CB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectAzeriMed.Application", "TestProjectAzeriMed.Application\TestProjectAzeriMed.Application.csproj", "{F6CDEA3C-E807-4730-9754-E5C8CDB66306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectAzeriMed.Domain", "TestProjectAzeriMed.Domain\TestProjectAzeriMed.Domain.csproj", "{A878B0D2-7924-4140-814D-0B8C740B4FCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B76A9F01-4ABA-4CDA-8068-C114FED668A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectAzeriMed.Infrastructure", "TestProjectAzeriMed.Infrastructure\TestProjectAzeriMed.Infrastructure.csproj", "{4745EAC5-0A1B-418A-8D0D-B03D6355C9AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectAzeriMed.Identity", "TestProjectAzeriMed.Identity\TestProjectAzeriMed.Identity.csproj", "{632C8860-7EAC-4BAB-86A5-9753918F4248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProjectAzeriMed.Persistence", "TestProjectAzeriMed.Persistence\TestProjectAzeriMed.Persistence.csproj", "{58FDFB04-E83D-40BB-99FD-0061DF461B3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B069B4C-606B-45DB-A941-65E0AE397CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B069B4C-606B-45DB-A941-65E0AE397CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B069B4C-606B-45DB-A941-65E0AE397CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B069B4C-606B-45DB-A941-65E0AE397CB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6CDEA3C-E807-4730-9754-E5C8CDB66306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6CDEA3C-E807-4730-9754-E5C8CDB66306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6CDEA3C-E807-4730-9754-E5C8CDB66306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6CDEA3C-E807-4730-9754-E5C8CDB66306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A878B0D2-7924-4140-814D-0B8C740B4FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A878B0D2-7924-4140-814D-0B8C740B4FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A878B0D2-7924-4140-814D-0B8C740B4FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A878B0D2-7924-4140-814D-0B8C740B4FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4745EAC5-0A1B-418A-8D0D-B03D6355C9AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4745EAC5-0A1B-418A-8D0D-B03D6355C9AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4745EAC5-0A1B-418A-8D0D-B03D6355C9AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4745EAC5-0A1B-418A-8D0D-B03D6355C9AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{632C8860-7EAC-4BAB-86A5-9753918F4248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{632C8860-7EAC-4BAB-86A5-9753918F4248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{632C8860-7EAC-4BAB-86A5-9753918F4248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{632C8860-7EAC-4BAB-86A5-9753918F4248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58FDFB04-E83D-40BB-99FD-0061DF461B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58FDFB04-E83D-40BB-99FD-0061DF461B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58FDFB04-E83D-40BB-99FD-0061DF461B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58FDFB04-E83D-40BB-99FD-0061DF461B3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D36744C5-4337-4115-8B41-F87E21CB598C} = {1B21A466-1917-4689-8281-71BB35D5694F}
+		{F37C516B-BC2D-481F-9BDD-EB45815D007E} = {1B21A466-1917-4689-8281-71BB35D5694F}
+		{67C6B183-9F69-4E21-9A23-98F5291B3114} = {1B21A466-1917-4689-8281-71BB35D5694F}
+		{1B069B4C-606B-45DB-A941-65E0AE397CB4} = {F37C516B-BC2D-481F-9BDD-EB45815D007E}
+		{F6CDEA3C-E807-4730-9754-E5C8CDB66306} = {D36744C5-4337-4115-8B41-F87E21CB598C}
+		{A878B0D2-7924-4140-814D-0B8C740B4FCE} = {D36744C5-4337-4115-8B41-F87E21CB598C}
+		{B76A9F01-4ABA-4CDA-8068-C114FED668A0} = {1B21A466-1917-4689-8281-71BB35D5694F}
+		{4745EAC5-0A1B-418A-8D0D-B03D6355C9AD} = {B76A9F01-4ABA-4CDA-8068-C114FED668A0}
+		{632C8860-7EAC-4BAB-86A5-9753918F4248} = {B76A9F01-4ABA-4CDA-8068-C114FED668A0}
+		{58FDFB04-E83D-40BB-99FD-0061DF461B3D} = {B76A9F01-4ABA-4CDA-8068-C114FED668A0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2767285-CE3D-450E-B4B2-CC3B53019B96}
+	EndGlobalSection
+EndGlobal
