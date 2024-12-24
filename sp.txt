@@ -1,41 +1,30 @@
 CREATE PROCEDURE CalculateQuadraticRoots
     @a FLOAT,
     @b FLOAT,
-    @c FLOAT,
-    @Root1 FLOAT OUTPUT,
-    @Root2 FLOAT OUTPUT,
-    @ErrorMessage NVARCHAR(255) OUTPUT
+    @c FLOAT
 AS
 BEGIN
-    SET NOCOUNT ON;
-    
-    SET @ErrorMessage = NULL;
-    
-    IF @a = 0
-    BEGIN
-        SET @ErrorMessage = 'Coefficient a cannot be zero.';
-        RETURN;
-    END
-    
-    DECLARE @Discriminant FLOAT;
-    SET @Discriminant = @b * @b - 4 * @a * @c;
+    DECLARE @discriminant FLOAT;
+    DECLARE @root1 FLOAT;
+    DECLARE @root2 FLOAT;
 
-    IF @Discriminant > 0
+    -- Calculate the discriminant
+    SET @discriminant = (@b * @b) - (4 * @a * @c);
+
+    -- Check if the discriminant is positive, zero, or negative
+    IF @discriminant > 0
     BEGIN
-        SET @Root1 = (-@b + SQRT(@Discriminant)) / (2 * @a);
-        SET @Root2 = (-@b - SQRT(@Discriminant)) / (2 * @a);
+        SET @root1 = (-@b + SQRT(@discriminant)) / (2 * @a);
+        SET @root2 = (-@b - SQRT(@discriminant)) / (2 * @a);
+        SELECT 'Two Real Roots' AS RootType, @root1 AS Root1, @root2 AS Root2;
     END
-    
-    ELSE IF @Discriminant = 0
+    ELSE IF @discriminant = 0
     BEGIN
-        SET @Root1 = -@b / (2 * @a);
-        SET @Root2 = @Root1; 
+        SET @root1 = -@b / (2 * @a);
+        SELECT 'One Real Root' AS RootType, @root1 AS Root1
     END
-    
     ELSE
     BEGIN
-        SET @ErrorMessage = 'no real roots';
-        SET @Root1 = NULL;
-        SET @Root2 = NULL;
+        SELECT 'No Real Roots (Complex Roots)' AS RootType, NULL AS Root1, NULL AS Root2;
     END
-END
+END;
