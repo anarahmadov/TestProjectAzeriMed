@@ -1,4 +1,4 @@
-ALTER PROCEDURE CalculateQuadraticRoots
+CREATE PROCEDURE CalculateQuadraticRoots
     @a FLOAT,
     @b FLOAT,
     @c FLOAT
@@ -21,7 +21,7 @@ BEGIN
     ELSE IF @discriminant = 0
     BEGIN
         SET @root1 = -@b / (2 * @a);
-        SELECT 'One Real Root' AS RootType, @root1 AS Root1, NULL AS Root2;
+        SELECT 'One Real Root' AS RootType, @root1 AS Root1
     END
     ELSE
     BEGIN
